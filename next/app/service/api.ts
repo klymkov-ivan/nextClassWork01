@@ -9,6 +9,12 @@ export interface Note {
   tag: string;
 }
 
+export interface NewNote {
+  title: string;
+  content: string;
+  tag: string;
+}
+
 interface ResponseAPI {
   notes: Note[];
 }
@@ -26,4 +32,14 @@ const api = axios.create({
 export const fetchNotes = async (): Promise<Note[]> => {
   const { data } = await api.get<ResponseAPI>('/');
   return data.notes;
+};
+
+export const getSingleNote = async (id: string): Promise<Note> => {
+  const { data } = await api.get<Note>(`/${id}`);
+  return data;
+};
+
+export const createNewNote = async (note: NewNote): Promise<Note> => {
+  const { data } = await api.post<Note>('/', note);
+  return data;
 };

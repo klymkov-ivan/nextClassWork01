@@ -1,0 +1,23 @@
+.cardContainer {
+  background-color: aliceblue;
+  border-radius: 12px;
+  border: 1px solid cornflowerblue;
+  padding: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.noteList {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  list-style: none;
+}

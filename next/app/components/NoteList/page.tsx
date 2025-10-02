@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import type { Note } from '../../service/api';
 import css from './Notelist.module.css';
 
@@ -10,7 +11,9 @@ export const NoteList = ({ notes }: Props) => {
     <ul className={css.noteList}>
       {notes.map((note) => (
         <li key={note.id} className={css.cardContainer}>
-          <h2>{note.title}</h2>
+          <Link href={`/notes/${note.id}`}>
+            <h2>{note.title}</h2>
+          </Link>
           <h3>Tag: {note.tag}</h3>
           <p>{note.content}</p>
         </li>
